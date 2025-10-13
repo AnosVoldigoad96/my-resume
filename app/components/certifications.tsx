@@ -23,8 +23,7 @@ export const Certifications = ({ data }: CertificationsProps) => {
         {data.map((cert) => (
           <div
             key={cert.title}
-            className={`group relative flex flex-col rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20 ${cert.certificateUrl ? 'cursor-pointer' : ''}`}
-            onClick={() => cert.certificateUrl && setSelectedCert(cert)}
+            className="group relative flex flex-col rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
           >
             <div className="flex items-start gap-x-4">
               <div className="mt-1 text-accent">
@@ -42,7 +41,13 @@ export const Certifications = ({ data }: CertificationsProps) => {
               </div>
             </div>
             {cert.certificateUrl && (
-              <ExternalLink className="absolute right-4 top-1/2 -translate-y-1/2 h-6 w-6 text-foreground/20 transition-all duration-300 group-hover:text-accent" />
+              <button
+                onClick={() => setSelectedCert(cert)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full p-2 transition-colors hover:bg-accent/10"
+                aria-label={`View certificate for ${cert.title}`}
+              >
+                <ExternalLink className="h-6 w-6 text-foreground/20 transition-all duration-300 group-hover:text-accent" />
+              </button>
             )}
           </div>
         ))}

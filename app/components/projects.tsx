@@ -23,8 +23,7 @@ export const Projects = ({ data }: ProjectsProps) => {
         {data.map((project) => (
           <div
             key={project.title}
-            className="group relative flex cursor-pointer flex-col rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
-            onClick={() => setSelectedProject(project)}
+            className="group relative flex flex-col rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
           >
             <div className="flex-grow">
               <h3 className="font-semibold text-foreground">{project.title}</h3>
@@ -42,9 +41,13 @@ export const Projects = ({ data }: ProjectsProps) => {
                 <LinkIcon className="h-5 w-5 text-foreground/40 transition-colors group-hover:text-primary" />
               </a>
             )}
-            <div className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/50 transition-colors group-hover:bg-accent/20">
+            <button
+              onClick={() => setSelectedProject(project)}
+              className="absolute bottom-3 right-3 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-background/50 transition-colors group-hover:bg-accent/20"
+              aria-label={`View details for ${project.title}`}
+            >
               <ChevronRight className="h-5 w-5 text-foreground/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent" />
-            </div>
+            </button>
           </div>
         ))}
       </div>
