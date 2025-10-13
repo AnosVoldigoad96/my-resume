@@ -37,7 +37,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       onClick={onClose}
     >
       <div
-        className="relative m-4 w-full max-w-sm max-h-[90vh] overflow-y-auto rounded-xl bg-background p-8 shadow-lg shadow-accent/20 animate-[modal-content-show_0.3s_ease-out] no-scrollbar md:max-w-2xl"
+        className="relative m-4 w-full max-w-sm max-h-[85vh] overflow-y-auto rounded-xl bg-background p-8 shadow-lg shadow-accent/20 animate-[modal-content-show_0.3s_ease-out] no-scrollbar md:max-w-2xl"
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
       >
         <button
