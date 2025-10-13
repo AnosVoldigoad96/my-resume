@@ -35,7 +35,7 @@ export const ContactModal = ({ onClose }: ContactModalProps) => {
         </button>
         <div className="mb-4">
           <h3 className="text-2xl font-bold text-primary">Contact Me</h3>
-          <p className="text-sm text-foreground/60">I'll get back to you as soon as possible.</p>
+          <p className="text-sm text-foreground/60">I&apos;ll get back to you as soon as possible.</p>
         </div>
         <ContactForm onSuccess={handleClose} />
       </div>
