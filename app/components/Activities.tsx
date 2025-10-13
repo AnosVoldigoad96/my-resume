@@ -6,7 +6,7 @@ interface ActivitiesProps {
 
 export const Activities = ({ data }: ActivitiesProps) => {
   return (
-    <section className="mb-12">
+    <section>
       <h2 className="text-2xl font-bold tracking-tight text-secondary mb-6">
         Activities & Interests
       </h2>
