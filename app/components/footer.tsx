@@ -9,7 +9,7 @@ export const Footer = ({ data }: FooterProps) => {
   const { contact, name } = data;
   return (
     <footer className="mt-12 border-t bg-background/50 pt-8 pb-4">
-      <div className="container mx-auto flex max-w-3xl items-center justify-between gap-4 px-4">
+      <div className="container mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 px-4 text-center sm:flex-row sm:text-left">
         <p className="text-sm text-foreground/60">
           &copy; {new Date().getFullYear()} {name}. All rights reserved.
         </p>

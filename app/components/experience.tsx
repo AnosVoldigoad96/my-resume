@@ -12,7 +12,7 @@ export const WorkExperience = ({ data }: WorkExperienceProps) => {
       </h2>
       <div className="relative border-l-2 border-secondary/20 ml-2">
         {data.map((job) => (
-          <div key={job.company} className="mb-12 pl-8">
+          <div key={job.company} className="mb-12 pl-6 sm:pl-8">
             <div className="absolute -left-[7px] mt-1 h-3 w-3 rounded-full bg-secondary"></div>
             <div className="text-sm font-medium text-foreground/60">
               {job.start} - {job.end}

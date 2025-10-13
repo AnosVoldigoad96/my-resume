@@ -23,18 +23,18 @@ export const Certifications = ({ data }: CertificationsProps) => {
         {data.map((cert) => (
           <div
             key={cert.title}
-            className="group relative flex flex-col rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
+            className="group relative flex items-center justify-between gap-x-4 rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
           >
-            <div className="flex items-start gap-x-4">
+            <div className="flex flex-1 items-start gap-x-4">
               <div className="mt-1 text-accent">
                 <Award size={24} />
               </div>
-              <div className="w-10/12">
+              <div className="flex-1">
                 <h3 className="font-semibold text-foreground">
                   {cert.title}
                   <span className="ml-2 text-sm font-normal text-foreground/60">({cert.year})</span>
                 </h3>
-                <p className="mt-1 text-sm text-foreground/80 text-justify">
+                <p className="mt-1 text-sm text-foreground/80 text-left sm:text-justify">
                   {cert.issuer}
                   {cert.platform && ` · ${cert.platform}`}
                 </p>
@@ -43,7 +43,7 @@ export const Certifications = ({ data }: CertificationsProps) => {
             {cert.certificateUrl && (
               <button
                 onClick={() => setSelectedCert(cert)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-full p-2 transition-colors hover:bg-accent/10"
+                className="cursor-pointer rounded-full p-2 transition-colors hover:bg-accent/10"
                 aria-label={`View certificate for ${cert.title}`}
               >
                 <ExternalLink className="h-6 w-6 text-foreground/20 transition-all duration-300 group-hover:text-accent" />
