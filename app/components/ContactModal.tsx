@@ -23,7 +23,7 @@ export const ContactModal = ({ onClose }: ContactModalProps) => {
       onClick={handleClose}
     >
       <div
-        className={`relative m-4 w-full max-w-lg rounded-xl bg-background p-8 shadow-lg shadow-accent/20 ${isClosing ? 'animate-[modal-content-hide_0.3s_ease-in_forwards]' : 'animate-[modal-content-show_0.3s_ease-out]'}`}
+        className={`relative m-4 w-full max-w-sm rounded-xl bg-background p-8 shadow-lg shadow-accent/20 sm:max-w-lg ${isClosing ? 'animate-[modal-content-hide_0.3s_ease-in_forwards]' : 'animate-[modal-content-show_0.3s_ease-out]'}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
