@@ -31,7 +31,7 @@ export const WorkExperience = ({ data }: WorkExperienceProps) => {
                 )}
               </h3>
               <p className="font-medium text-foreground/80">{job.title}</p>
-              <p className="mt-2 text-foreground/70 text-sm">{job.description}</p>
+              <p className="mt-2 text-sm text-foreground/70 text-justify">{job.description}</p>
             </div>
           </div>
         ))}

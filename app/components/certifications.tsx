@@ -34,7 +34,7 @@ export const Certifications = ({ data }: CertificationsProps) => {
                   {cert.title}
                   <span className="ml-2 text-sm font-normal text-foreground/60">({cert.year})</span>
                 </h3>
-                <p className="mt-1 text-sm text-foreground/80 text-left sm:text-justify">
+                <p className="mt-1 text-sm text-foreground/80 text-justify">
                   {cert.issuer}
                   {cert.platform && ` · ${cert.platform}`}
                 </p>
