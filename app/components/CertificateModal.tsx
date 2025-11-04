@@ -14,7 +14,7 @@ export const CertificateModal = ({ imageUrl, title, onClose }: CertificateModalP
       onClick={onClose}
     >
       <div
-        className="relative m-4 w-full max-w-sm max-h-[85vh] rounded-xl bg-background p-4 shadow-lg shadow-accent/20 animate-[modal-content-show_0.3s_ease-out] md:max-w-lg lg:max-w-4xl"
+className="relative m-4 w-full max-w-sm max-h-[85vh] rounded-xl bg-background p-4 shadow-lg shadow-accent/20 animate-[modal-content-show_0.3s_ease-out] md:max-w-lg lg:max-w-4xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button

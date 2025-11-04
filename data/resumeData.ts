@@ -64,11 +64,11 @@ export const resumeData = {
     {
       company: "7Sky",
       link: "#",
-      badges: ["Inbound Call Center"],
-      title: "Quality Assurance / Copywriter",
+      badges: ["Marketing Agency"],
+      title: "Quality Assurance / Copywriter / Marketing Specialist",
       start: "Nov 2023",
       end: "Aug 2025",
-      description: "Copywriting for various travel websites and managing the CSR team.",
+      description: "Handled copywriting for travel websites, Google and Meta ads, email campaigns, and social media marketing.",
     },
     {
       company: "Dozz+ Pharmacy",
