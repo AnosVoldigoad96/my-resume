@@ -67,7 +67,7 @@ export const Header = ({ data }: { data: ResumeData }) => {
             </button>
             <div className="flex w-full flex-col items-center gap-y-2">
               <a
-                href="/Hassaan Qazi Resume.pdf"
+                href="/Dr. Hassaan Qazi Resume.pdf"
                 download
                 className="inline-flex w-full items-center justify-center gap-x-2 whitespace-nowrap rounded-md bg-accent/90 px-4 py-2 text-sm font-semibold text-background shadow-sm transition-all hover:bg-accent hover:scale-105"
               >
