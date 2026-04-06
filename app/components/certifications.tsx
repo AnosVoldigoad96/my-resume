@@ -12,41 +12,38 @@ interface CertificationsProps {
 }
 
 export const Certifications = ({ data }: CertificationsProps) => {
-    const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold tracking-tight text-secondary mb-6">
+    <section>
+      <h2 className="text-xl font-bold tracking-tight text-foreground mb-5 flex items-center gap-x-3">
+        <span className="inline-block h-6 w-1.5 rounded-full bg-gradient-to-b from-accent to-secondary shrink-0" />
         Certifications
       </h2>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {data.map((cert) => (
           <div
             key={cert.title}
-            className="group relative flex items-center justify-between gap-x-4 rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20"
+            className="group relative flex items-start gap-x-3.5 rounded-xl bg-surface border border-border p-4 transition-all duration-300 hover:shadow-md hover:shadow-accent/10 hover:-translate-y-0.5 hover:border-accent/30"
           >
-            <div className="flex flex-1 items-start gap-x-4">
-              <div className="mt-1 text-accent">
-                <Award size={24} />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-foreground">
-                  {cert.title}
-                  <span className="ml-2 text-sm font-normal text-foreground/60">({cert.year})</span>
-                </h3>
-                <p className="mt-1 text-sm text-foreground/80 text-justify">
-                  {cert.issuer}
-                  {cert.platform && ` · ${cert.platform}`}
-                </p>
-              </div>
+            <div className="flex-shrink-0 mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
+              <Award className="h-4 w-4 text-accent" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-semibold text-foreground text-sm leading-snug">{cert.title}</h3>
+              <p className="mt-0.5 text-xs text-muted">
+                {cert.issuer}
+                {cert.platform && ` · ${cert.platform}`}
+              </p>
+              <p className="mt-0.5 text-xs font-semibold text-secondary">{cert.year}</p>
             </div>
             {cert.certificateUrl && (
               <button
                 onClick={() => setSelectedCert(cert)}
-                className="cursor-pointer rounded-full p-2 transition-colors hover:bg-accent/10"
+                className="flex-shrink-0 self-start rounded-lg p-1.5 text-muted transition-all hover:bg-accent/10 hover:text-accent"
                 aria-label={`View certificate for ${cert.title}`}
               >
-                <ExternalLink className="h-6 w-6 text-foreground/20 transition-all duration-300 group-hover:text-accent" />
+                <ExternalLink className="h-3.5 w-3.5" />
               </button>
             )}
           </div>
@@ -59,7 +56,7 @@ export const Certifications = ({ data }: CertificationsProps) => {
           title={selectedCert.title}
           onClose={() => setSelectedCert(null)}
         />
-      )}      
+      )}
     </section>
   );
 };
