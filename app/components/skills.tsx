@@ -6,31 +6,28 @@ interface SkillsProps {
 
 export const Skills = ({ data }: SkillsProps) => {
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold tracking-tight text-secondary mb-6">
+    <section>
+      <h2 className="text-xl font-bold tracking-tight text-foreground mb-5 flex items-center gap-x-3">
+        <span className="inline-block h-6 w-1.5 rounded-full bg-gradient-to-b from-primary to-secondary shrink-0" />
         Skills
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-        {data.map((skill, idx) => {
-          const level = Math.round(skill.level / 10);
-          const bars = Array(10).fill(0);
-
-          return (
-            <div key={skill.name} className="flex items-center justify-between rounded-lg p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-accent/20">
-              <span className="text-sm font-medium text-foreground/80">{skill.name}</span>
-              <div className="flex items-center gap-1" title={`${skill.level}% Expertise`}>
-                {bars.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-4 w-1 rounded-full transition-colors duration-300 ${
-                      i < level ? "bg-secondary" : "bg-secondary/20"
-                    }`}
-                  />
-                ))}
+      <div className="rounded-xl bg-surface border border-border p-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
+          {data.map((skill) => (
+            <div key={skill.name} className="group">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                <span className="text-xs font-semibold text-muted tabular-nums">{skill.level}%</span>
+              </div>
+              <div className="h-1.5 w-full rounded-full bg-border overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-primary to-secondary transition-all duration-700"
+                  style={{ width: `${skill.level}%` }}
+                />
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

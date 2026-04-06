@@ -6,11 +6,14 @@ interface AboutProps {
 
 export const About = ({ data }: AboutProps) => {
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-bold tracking-tight text-secondary mb-4">
+    <section>
+      <h2 className="text-xl font-bold tracking-tight text-foreground mb-5 flex items-center gap-x-3">
+        <span className="inline-block h-6 w-1.5 rounded-full bg-gradient-to-b from-primary to-secondary shrink-0" />
         About
       </h2>
-      <p className="text-foreground/80 leading-relaxed border-l-4 border-accent pl-4 text-justify">{data.summary}</p>
+      <div className="rounded-xl bg-surface border border-border p-5">
+        <p className="text-foreground/75 leading-relaxed text-[15px]">{data.summary}</p>
+      </div>
     </section>
   );
 };

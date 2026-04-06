@@ -12,15 +12,17 @@ import { Footer } from "@/app/components/footer";
 export default function Page() {
   return (
     <>
-      <main className="container mx-auto max-w-3xl p-4 sm:p-6 md:p-8">
+      <main className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8 py-8 sm:py-12">
         <Header data={resumeData} />
-        <About data={resumeData} />
-        <WorkExperience data={resumeData.work} />
-        <Education data={resumeData.education} />
-        <Skills data={resumeData.skills} />
-        <Projects data={resumeData.projects} />
-        <Certifications data={resumeData.certifications} />
-        <Activities data={resumeData.activities} />
+        <div className="mt-8 space-y-10">
+          <About data={resumeData} />
+          <WorkExperience data={resumeData.work} />
+          <Education data={resumeData.education} />
+          <Skills data={resumeData.skills} />
+          <Projects data={resumeData.projects} />
+          <Certifications data={resumeData.certifications} />
+          <Activities data={resumeData.activities} />
+        </div>
       </main>
       <Footer data={resumeData} />
     </>
